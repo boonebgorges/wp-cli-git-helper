@@ -38,13 +38,6 @@ Updating a theme:
     Theme updated successfully.
     Success: Updated 1/1 themes.
 
-    $ wp gh theme update make
-    Installing Jetpack by WordPress.com (3.0)
-    Downloading install package from https://downloads.wordpress.org/plugin/jetpack.3.0.zip...
-    Unpacking the package...
-    Installing the plugin...
-    Plugin installed successfully.
-
     # `wp gh` has written a commit message and created a changeset
     $ git log -n 1
     commit e0327c9bc26fa0e35e1a06d128f998d86c3b81db
