@@ -1,0 +1,25 @@
+{
+	"name": "boonebgorges/wp-cli-git-helper",
+	"type": "command",
+	"description": "Git helper for wp-cli core, plugin, and theme commands",
+	"keywords": ["wp-cli", "git"],
+	"homepage": "https://github.com/boonebgorges/wp-cli-git-helper",
+	"require": {
+		"php": ">=5.3",
+	},
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Boone B Gorges",
+			"email": "boone@gorg.es",
+			"homepage": "http://boone.gorg.es/"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/boonebgorges/wp-cli-git-helper/issues",
+		"source": "https://github.com/boonebgorges/wp-cli-git-helper"
+	},
+	"autoload": {
+		"files": [ "wp-cli-git-helper.php" ]
+	}
+}
