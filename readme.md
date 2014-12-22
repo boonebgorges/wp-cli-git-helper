@@ -59,3 +59,9 @@ None to speak of. This is a tool I've built for my own workflow. It assumes that
 * Proper `delete` support.
 * Support for the `--all` flag.
 * SVN support (jk!)
+
+## Changelog
+
+### 0.1.0
+
+* Initial release
