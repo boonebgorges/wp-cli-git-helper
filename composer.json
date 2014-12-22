@@ -5,7 +5,7 @@
 	"keywords": ["wp-cli", "git"],
 	"homepage": "https://github.com/boonebgorges/wp-cli-git-helper",
 	"require": {
-		"php": ">=5.3",
+		"php": ">=5.3"
 	},
 	"license": "MIT",
 	"authors": [
