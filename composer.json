@@ -5,8 +5,15 @@
 	"keywords": ["wp-cli", "git"],
 	"homepage": "https://github.com/boonebgorges/wp-cli-git-helper",
 	"require": {
-		"php": ">=5.3"
+		"php": ">=5.3",
+		"kbjr/Git.php": "dev-master"
 	},
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kbjr/Git.php"
+        }
+    ],
 	"license": "MIT",
 	"authors": [
 		{
