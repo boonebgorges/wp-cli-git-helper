@@ -56,6 +56,10 @@ class Git_Helper_Command extends WP_CLI_Command {
 		$repo = Git::open( ABSPATH );
 
 		foreach ( $new_assets as $new_asset_name => $new_asset ) {
+			if ( ! file_exists( $dir_base . $new_asset_name ) ) {
+				continue;
+			}
+
 			$repo->add( $dir_base . $new_asset_name );
 
 			// @todo override message generation with assoc_arg or with config.yml
