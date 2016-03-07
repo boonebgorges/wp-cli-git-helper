@@ -75,7 +75,7 @@ class Git_Helper_Command extends WP_CLI_Command {
 
 			$message = vsprintf( $message_formats[ $action ], $message_args );
 
-			$repo->commit( $message );
+			$repo->commit( $message, false );
 		}
 	}
 
