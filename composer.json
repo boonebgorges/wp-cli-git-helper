@@ -9,6 +9,9 @@
 		"bit3/git-php": "dev-master"
 	},
 	"license": "MIT",
+	"autoload": {
+		"classmap": ["src/"]
+	},
 	"authors": [
 		{
 			"name": "Boone B Gorges",
