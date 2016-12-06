@@ -40,7 +40,7 @@ class Git_Helper_Command extends WP_CLI_Command {
 				'update'  => "Update plugin: %s.\n\nName: %s\nNew version: %s\nPrevious version: %s",
 			);
 
-		} else if ( 'theme' === $command ) {
+		} elseif ( 'theme' === $command ) {
 			$dir_base = WP_CONTENT_DIR . '/themes/';
 			$message_formats = array(
 				'install' => "Install theme: %s.\n\nName: %s\nVersion: %s",
@@ -92,7 +92,7 @@ class Git_Helper_Command extends WP_CLI_Command {
 	protected function get_asset_details( $asset_name, $type ) {
 		if ( 'plugin' === $type ) {
 			return $this->get_plugin_details( $asset_name );
-		} else if ( 'theme' === $type ) {
+		} elseif ( 'theme' === $type ) {
 			return $this->get_theme_details( $asset_name );
 		}
 
@@ -101,8 +101,8 @@ class Git_Helper_Command extends WP_CLI_Command {
 
 	private function get_plugin_details( $plugin_name ) {
 		foreach ( get_plugins() as $file => $_ ) {
-			if ( $file === "$plugin_name.php" ||
-				( dirname( $file ) === $plugin_name && $plugin_name !== '.' ) ) {
+			if ( "$plugin_name.php" === $file ||
+				( dirname( $file ) === $plugin_name && '.' !== $plugin_name ) ) {
 				$_['file'] = $file;
 				return $_;
 			}
