@@ -1,6 +1,6 @@
 {
 	"name": "boonebgorges/wp-cli-git-helper",
-	"type": "command",
+	"type": "wp-cli-package",
 	"description": "Git helper for wp-cli core, plugin, and theme commands",
 	"keywords": ["wp-cli", "git"],
 	"homepage": "https://github.com/boonebgorges/wp-cli-git-helper",
