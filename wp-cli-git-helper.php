@@ -9,6 +9,7 @@ use \WP_CLI;
 // Bail if WP-CLI is not present.
 defined( 'WP_CLI' ) || die;
 
+if ( ! class_exists( 'Git_Helper_Command' ) ) :
 class Git_Helper_Command extends WP_CLI_Command {
 	public function __invoke( $args, $assoc_args ) {
 		$command = isset( $args[0] ) ? $args[0] : '';
@@ -131,5 +132,5 @@ class Git_Helper_Command extends WP_CLI_Command {
 		return $theme;
 	}
 }
-
 WP_CLI::add_command( 'gh', '\HardG\WpCliGitHelper\Git_Helper_Command' );
+endif;
