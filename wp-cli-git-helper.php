@@ -1,8 +1,10 @@
 <?php
 
-require 'vendor/autoload.php';
+namespace HardG\WpCliGitHelper;
 
 use Bit3\GitPhp\GitRepository;
+use \WP_CLI_Command;
+use \WP_CLI;
 
 // Bail if WP-CLI is not present.
 defined( 'WP_CLI' ) || die;
@@ -130,4 +132,4 @@ class Git_Helper_Command extends WP_CLI_Command {
 	}
 }
 
-WP_CLI::add_command( 'gh', 'Git_Helper_Command' );
+WP_CLI::add_command( 'gh', '\HardG\WpCliGitHelper\Git_Helper_Command' );
