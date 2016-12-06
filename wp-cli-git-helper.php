@@ -1,9 +1,7 @@
 <?php
 
 // Bail if WP-CLI is not present.
-if ( !defined( 'WP_CLI' ) ) return;
-
-require( __DIR__ . '/vendor/kbjr/Git.php/Git.php' );
+defined( 'WP_CLI' ) || die;
 
 class Git_Helper_Command extends WP_CLI_Command {
 	public function __invoke( $args, $assoc_args ) {
