@@ -1,5 +1,9 @@
 <?php
 
+require 'vendor/autoload.php';
+
+use Bit3\GitPhp\GitRepository;
+
 // Bail if WP-CLI is not present.
 defined( 'WP_CLI' ) || die;
 
@@ -51,14 +55,14 @@ class Git_Helper_Command extends WP_CLI_Command {
 		// Perform git actions.
 		// @todo 'delete' will require different logic.
 		// @todo Repo at other location than ABSPATH
-		$repo = Git::open( ABSPATH );
+		$repo = new GitRepository( ABSPATH );
 
 		foreach ( $new_assets as $new_asset_name => $new_asset ) {
 			if ( ! file_exists( $dir_base . $new_asset_name ) ) {
 				continue;
 			}
 
-			$repo->add( $dir_base . $new_asset_name );
+			$repo->add()->execute( $dir_base . $new_asset_name );
 
 			// @todo override message generation with assoc_arg or with config.yml
 			$message_args = array(
@@ -73,7 +77,7 @@ class Git_Helper_Command extends WP_CLI_Command {
 
 			$message = vsprintf( $message_formats[ $action ], $message_args );
 
-			$repo->commit( $message, false );
+			$repo->commit()->message( $message )->execute();
 		}
 	}
 
