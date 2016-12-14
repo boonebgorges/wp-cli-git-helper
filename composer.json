@@ -10,7 +10,8 @@
 	},
 	"license": "MIT",
 	"autoload": {
-		"classmap": ["src/"]
+		"classmap": ["src/"],
+		"files": ["wp-cli-git-helper.php"]
 	},
 	"authors": [
 		{
