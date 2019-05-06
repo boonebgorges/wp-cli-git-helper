@@ -16,6 +16,8 @@ class Command extends WP_CLI_Command {
 
 		$action = isset( $args[1] ) ? $args[1] : '';
 
+		$dir = defined( 'WP_CLI_GIT_HELPER_REPO_ROOT' ) ? WP_CLI_GIT_HELPER_REPO_ROOT : ABSPATH;
+
 		if ( ! in_array( $action, array( 'update', 'install' ) ) ) {
 			WP_CLI::error( '\'wp gh ' . $command . '\' can only be run with \'update\' or \'install\' commands.' );
 		}
@@ -53,8 +55,7 @@ class Command extends WP_CLI_Command {
 
 		// Perform git actions.
 		// @todo 'delete' will require different logic.
-		// @todo Repo at other location than ABSPATH
-		$repo = new GitRepository( ABSPATH );
+		$repo = new GitRepository( $dir );
 
 		foreach ( $new_assets as $new_asset_name => $new_asset ) {
 			if ( ! file_exists( $dir_base . $new_asset_name ) ) {
